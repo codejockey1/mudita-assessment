@@ -33,6 +33,11 @@ public class TaskAnalysisService {
         String dallePrompt = extractDallePrompt(analysis);
         String imageUrl = openAIService.generateImage(dallePrompt);
         String analysisStripped = stripDallEPrompt(analysis);
+
+        System.out.println("Analysis: " + analysis);
+        System.out.println("Dalle Prompt: " + dallePrompt);
+        System.out.println("Image URL: " + imageUrl);
+        System.out.println("Analysis Stripped: " + analysisStripped);
         
         // Use fallback image URL if generateImage returns null
         if (imageUrl == null) {
