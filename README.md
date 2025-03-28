@@ -38,17 +38,24 @@ The project uses Docker and Docker Compose for consistent development, testing, 
 
 ## Prerequisites
 1. Install Docker
-2. Set your OPENAI key environment variable:
-export OPENAI_API_KEY=your_api_key_here
+2. Get an OpenAI API key from [OpenAI's website](https://platform.openai.com/api-keys)
 
 ## How to run application
 
 1. Clone the repository
-2. Start the services:
+2. Set up environment variables:
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env with your credentials
+   # Set your OpenAI API key and basic auth credentials
+   ```
+3. Start the services:
    ```bash
    docker compose up -d
    ```
-3. Open your browser and navigate to `http://localhost:80`
+4. Open your browser and navigate to `http://localhost:80`
 
 ## How to run the backend locally
 

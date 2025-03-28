@@ -1,0 +1,16 @@
+# Sensitive files
+.htpasswd
+.env
+*.env
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db 
+build/
+.gradle/
