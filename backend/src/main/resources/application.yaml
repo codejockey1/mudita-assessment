@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: tasks
+
+openai:
+  api:
+    key: ${OPENAI_API_KEY}
+    model: gpt-4
+    image-model: dall-e-3
+    base-url: https://api.openai.com/v1
+    task-analysis:
+      prompt-template: >-
+        Please analyze these tasks and optimize their order.
+        Provide a comical but accurate and concise summary explaining why you chose this order.
+
+        An example of a good summary:
+        "We think {insert task} and {insert task} are both tasks that can’t be skipped. We also assume since it’s a school day that daughter won’t be home until late afternoon. We also bundled the two outdoor activities together. As such, we recommend something like this:
+
+        11AM: {insert task}
+        1PM: {insert task}
+        2PM: {insert task}
+        4PM: {insert task}
+
+        Then, create a detailed prompt for DALL-E to generate an image that visualizes the optimized task sequence.
+        The prompt should be clear and specific to help generate a funny and engaging visual representation of the tasks to be completed using the style of a cartoon, SNL sketch, the muppets, or a popular sitcom.
+        Format the DALL-E prompt in a section starting with '%s' on a new line.
+
+        Tasks to analyze:
+        %s
+      dalle-prompt-marker: "DALL-E PROMPT:"
+      fallback-dalle-prompt: "A colorful and engaging visualization of task management and organization, showing tasks being arranged in an optimal sequence"
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.mudita.assessment: DEBUG 

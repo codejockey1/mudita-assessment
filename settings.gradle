@@ -1,0 +1,2 @@
+rootProject.name = 'mudita-assessment'
+include 'backend' 
